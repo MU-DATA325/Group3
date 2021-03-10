@@ -7,7 +7,7 @@ library(skimr)
 ```
 
 ``` r
-vgsales <- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/vgsales.csv")
+vgsales <- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/data/vgsales.csv")
  
 skim(vgsales)
 ```
