@@ -1,0 +1,17 @@
+---
+title: "group3"
+output: github_document
+---
+
+```{r load-pkg, message = FALSE}
+library(tidyverse)
+library(skimr)
+```
+
+
+```{r load-data, message = FALSE}
+vgsales <- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/vgsales.csv")
+ 
+skim(vgsales)
+```
+
