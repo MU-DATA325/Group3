@@ -5,6 +5,69 @@ date: "3/25/2021"
 output: html_document
 ---
 
+```{r}
+---
+title: "Progect Proposal Group 3 - Video Games Sales Dataset"
+author: "Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna"
+output: github_document
+---
+**<u>Introduction</u>**
+
+For our Data final project, we chose the “Video Game Sales” dataset from **Kaggle.com.** All of the group members are fond of video games and we thought it would be an interesting task to analyze data about video games and explore relationships of video game characteristics and sales.
+
+“Video Game Sales” was published by Gregory Smith on Kaggle in 2017PerPe. The dataset has a list of video games with sales of over 100,000 copies worldwide between the years 2007-2011. The data was collected from the website VGChartz, which is a business intelligence research firm that was founded in 2005 by Brett Walton. VGChartz offers consumers access to their 55,000+ large database on video games which includes sales data, reviews, news, and a forum. 
+
+The dataset is comprised of 11,493 variables (video games) and the fields of the data set are: 
+
+* <u>Rank</u> - Ranking of overall sales
+* <u>Name</u> - The games' names
+* <u>Platform</u> - Platform of the games release (i.e. PC,PS4, etc.)
+* <u>Year</u> - Year of the game's release
+* <u>Genre</u> - Genre of the game
+* <u>Publisher</u> - Publisher of the game
+* <u>NA_Sales</u> - Sales in North America (in millions)
+* <u>EU_Sales</u> - Sales in Europe (in millions)
+* <u>JP_Sales</u> - Sales in Japan (in millions)
+* <u>Other_Sales</u> - Sales in the rest of the world (in millions)
+* <u>Global_Sales</u> - Total worldwide sales.
+
+Looking at the data, we thought it would be interesting to find what was the relationship between the genre of the video game and its sales worldwide between the years 2007-2011.
+
+**<u>Data</u>**
+
+
+```{r load-pkg, message = FALSE}
+library(tidyverse)
+library(skimr)
+```
+
+```{r load-data, message = FALSE}
+vgsales <- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/data/vgsales.csv")
+ 
+skim(vgsales)
+glimpse(vgsales)
+```
+
+**<u>Data Analysis Plan</u>**
+
+* <u>Outcome (y)</u>: Global Sales
+* <u>Predictor (x)</u>: Genre
+* <u>Preliminary Exploratory Data Analysis</u>: 
+  + Count all genres
+  + Find the most produced genre.
+  + Count sales worldwide between the years of 2007-2011
+* <u>Hypothesis</u>: The most produced genre also had the highest amount of sales worldwide. 
+* <u>Methods</u>: 
+  + 1. Find total sales for each genre 
+  + 2. Compare total sales of each genre. 
+  + 3. Find the most popular genre in the world. 
+
+***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
+
+
+```
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
