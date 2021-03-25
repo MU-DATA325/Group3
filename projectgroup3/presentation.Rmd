@@ -1,15 +1,8 @@
 ---
 title: "presentaion"
-author: "group 3"
+author: "Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna"
 date: "3/25/2021"
 output: html_document
----
-
-```{r}
----
-title: "Progect Proposal Group 3 - Video Games Sales Dataset"
-author: "Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna"
-output: github_document
 ---
 **<u>Introduction</u>**
 
