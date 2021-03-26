@@ -64,9 +64,13 @@ genre_globalsales <- vgsales %>%
   summarise(Global_Sales= sum(Global_Sales)) %>%
   arrange(desc(Global_Sales))
 genre_globalsales
-          
+```
 
-
-  
+## Plots ##
+```{r Plot1}
+genre_globalsales %>%
+  ggplot(aes(y=Genre, x=Global_Sales, colour= Genre, fill=Genre)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label=Global_Sales), hjust = 1.0, colour= "black")
 ```
 
