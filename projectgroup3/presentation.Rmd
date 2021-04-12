@@ -1,8 +1,16 @@
 ---
-title: "presentaion"
+title: "Project Group 3"
+subtitle: "DATA 325 | Dr. Andrew Hall"
 author: "Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna"
-date: "3/25/2021"
-output: html_document
+date: "4/15/21"
+institute: "Marymount University"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
 ---
 **<u>Introduction</u>**
 
