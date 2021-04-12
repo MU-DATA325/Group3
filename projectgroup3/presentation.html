@@ -154,15 +154,7 @@ glimpse(vgsales)
   + 3. Find the most popular genre in the world. 
 
 ***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
-
-
-```r
-genre_globalsales &lt;- vgsales %&gt;% 
-  group_by(Genre) %&gt;% 
-  summarise(Global_Sales= sum(Global_Sales)) %&gt;%
-  arrange(desc(Global_Sales))
-genre_globalsales
-```
+---
 
 ```
 ## # A tibble: 12 x 2
@@ -182,13 +174,8 @@ genre_globalsales
 ## 12 Strategy             175.
 ```
 
-```r
-genre_EU_Sales &lt;- vgsales %&gt;% 
-  group_by(Genre) %&gt;% 
-  summarise(EU_Sales= sum(EU_Sales)) %&gt;%
-  arrange(desc(EU_Sales))
-genre_EU_Sales
-```
+---
+
 
 ```
 ## # A tibble: 12 x 2
@@ -208,14 +195,8 @@ genre_EU_Sales
 ## 12 Strategy         45.3
 ```
 
+---
 
-```r
-NAsalesgenre &lt;- vgsales %&gt;% 
-  group_by(Genre) %&gt;% 
-  summarise(NA_Sales= sum(NA_Sales)) %&gt;%
-  arrange(desc(NA_Sales))
-NAsalesgenre
-```
 
 ```
 ## # A tibble: 12 x 2
@@ -235,36 +216,16 @@ NAsalesgenre
 ## 12 Strategy         68.7
 ```
 
-```
-
+---
 
 ## Plots ##
-
-```r
-genre_globalsales %&gt;%
-  ggplot(aes(y=Genre, x=Global_Sales, colour= Genre, fill=Genre)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label=Global_Sales), hjust = 1.0, colour= "black")
-```
-
 ![](presentation_files/figure-html/Plot1-1.png)&lt;!-- --&gt;
 
-```r
-genre_EU_Sales %&gt;%
-  ggplot(aes(y=Genre, x=EU_Sales, colour= Genre, fill=Genre)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label=EU_Sales), hjust = 1.0, colour= "black")
-```
+---
 
 ![](presentation_files/figure-html/Plot2-1.png)&lt;!-- --&gt;
 
-
-```r
-NAsalesgenre %&gt;%
-  ggplot(aes(y=Genre, x=NA_Sales, colour= Genre, fill=Genre)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label=NA_Sales), hjust = 1.0, colour= "black")
-```
+---
 
 ![](presentation_files/figure-html/Plot3-1.png)&lt;!-- --&gt;
 

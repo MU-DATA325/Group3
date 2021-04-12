@@ -88,15 +88,18 @@ glimpse(vgsales)
   + 3. Find the most popular genre in the world. 
 
 ***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
-
-```{r sales, message=FALSE}
+---
+```{r GLOBALsales, echo=FALSE}
 genre_globalsales <- vgsales %>% 
   group_by(Genre) %>% 
   summarise(Global_Sales= sum(Global_Sales)) %>%
   arrange(desc(Global_Sales))
 genre_globalsales
 ```
-```{r}
+
+---
+
+```{r EUsales, echo=FALSE}
 genre_EU_Sales <- vgsales %>% 
   group_by(Genre) %>% 
   summarise(EU_Sales= sum(EU_Sales)) %>%
@@ -104,7 +107,9 @@ genre_EU_Sales <- vgsales %>%
 genre_EU_Sales
 ```
 
-```{r nasales, message=FALSE}
+---
+
+```{r nasales, echo=FALSE}
 NAsalesgenre <- vgsales %>% 
   group_by(Genre) %>% 
   summarise(NA_Sales= sum(NA_Sales)) %>%
@@ -112,24 +117,28 @@ NAsalesgenre <- vgsales %>%
 NAsalesgenre
 ```
 
-```
-
+---
 
 ## Plots ##
-```{r Plot1}
+```{r Plot1, echo=FALSE}
 genre_globalsales %>%
   ggplot(aes(y=Genre, x=Global_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
   geom_text(aes(label=Global_Sales), hjust = 1.0, colour= "black")
 ```
-```{r Plot2}
+
+---
+
+```{r Plot2, echo=FALSE}
 genre_EU_Sales %>%
   ggplot(aes(y=Genre, x=EU_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
   geom_text(aes(label=EU_Sales), hjust = 1.0, colour= "black")
 ```
 
-```{r Plot3}
+---
+
+```{r Plot3, echo=FALSE}
 NAsalesgenre %>%
   ggplot(aes(y=Genre, x=NA_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
