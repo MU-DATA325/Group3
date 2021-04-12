@@ -72,6 +72,15 @@ genre_EU_Sales <- vgsales %>%
   arrange(desc(EU_Sales))
 genre_EU_Sales
 ```
+
+```{r nasales, message=FALSE}
+NAsalesgenre <- vgsales %>% 
+  group_by(Genre) %>% 
+  summarise(NA_Sales= sum(NA_Sales)) %>%
+  arrange(desc(NA_Sales))
+NAsalesgenre
+```
+
 ```
 
 
@@ -89,4 +98,10 @@ genre_EU_Sales %>%
   geom_text(aes(label=EU_Sales), hjust = 1.0, colour= "black")
 ```
 
+```{r Plot3}
+NAsalesgenre %>%
+  ggplot(aes(y=Genre, x=NA_Sales, colour= Genre, fill=Genre)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label=NA_Sales), hjust = 1.0, colour= "black")
+```
 
