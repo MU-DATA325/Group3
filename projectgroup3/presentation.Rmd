@@ -65,6 +65,15 @@ genre_globalsales <- vgsales %>%
   arrange(desc(Global_Sales))
 genre_globalsales
 ```
+```{r}
+genre_EU_Sales <- vgsales %>% 
+  group_by(Genre) %>% 
+  summarise(EU_Sales= sum(EU_Sales)) %>%
+  arrange(desc(EU_Sales))
+genre_EU_Sales
+```
+```
+
 
 ## Plots ##
 ```{r Plot1}
@@ -73,11 +82,11 @@ genre_globalsales %>%
   geom_bar(stat = "identity") +
   geom_text(aes(label=Global_Sales), hjust = 1.0, colour= "black")
 ```
-```{r}
-genre_EU_Sales <- vgsales %>% 
-  group_by(Genre) %>% 
-  summarise(EU_Sales= sum(EU_Sales)) %>%
-  arrange(desc(EU_Sales))
-genre_EU_Sales
+```{r Plot2}
+genre_EU_Sales %>%
+  ggplot(aes(y=Genre, x=EU_Sales, colour= Genre, fill=Genre)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label=EU_Sales), hjust = 1.0, colour= "black")
 ```
+
 
