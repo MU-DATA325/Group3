@@ -73,4 +73,11 @@ genre_globalsales %>%
   geom_bar(stat = "identity") +
   geom_text(aes(label=Global_Sales), hjust = 1.0, colour= "black")
 ```
+```{r}
+genre_EU_Sales <- vgsales %>% 
+  group_by(Genre) %>% 
+  summarise(EU_Sales= sum(EU_Sales)) %>%
+  arrange(desc(EU_Sales))
+genre_EU_Sales
+```
 
