@@ -20,13 +20,22 @@ class: center, middle, inverse, title-slide
 
 ---
 
-**&lt;u&gt;Introduction&lt;/u&gt;**
+##**&lt;u&gt;Introduction&lt;/u&gt;**
+--
 
 For our Data final project, we chose the “Video Game Sales” dataset from **Kaggle.com.** All of the group members are fond of video games and we thought it would be an interesting task to analyze data about video games and explore relationships of video game characteristics and sales.
 
+--
+
 “Video Game Sales” was published by Gregory Smith on Kaggle in 2017PerPe. The dataset has a list of video games with sales of over 100,000 copies worldwide between the years 2007-2011. The data was collected from the website VGChartz, which is a business intelligence research firm that was founded in 2005 by Brett Walton. VGChartz offers consumers access to their 55,000+ large database on video games which includes sales data, reviews, news, and a forum. 
 
+---
+
+##&lt;u&gt;Dataset&lt;/u&gt;
+--
+
 The dataset is comprised of 11,493 variables (video games) and the fields of the data set are: 
+--
 
 * &lt;u&gt;Rank&lt;/u&gt; - Ranking of overall sales
 * &lt;u&gt;Name&lt;/u&gt; - The games' names
@@ -40,22 +49,34 @@ The dataset is comprised of 11,493 variables (video games) and the fields of the
 * &lt;u&gt;Other_Sales&lt;/u&gt; - Sales in the rest of the world (in millions)
 * &lt;u&gt;Global_Sales&lt;/u&gt; - Total worldwide sales.
 
+--
+
 Looking at the data, we thought it would be interesting to find what was the relationship between the genre of the video game and its sales worldwide between the years 2007-2011.
 
-**&lt;u&gt;Data&lt;/u&gt;**
+---
 
+##&lt;u&gt;Data&lt;/u&gt; 
+--
+
+First we load the packages *&lt;u&gt;tidyverse&lt;/u&gt;* and *&lt;u&gt;skimr&lt;/u&gt;*. 
 
 
 ```r
 library(tidyverse)
 library(skimr)
 ```
+--
+Using these packages we can save the dataset using *&lt;u&gt;read_csv&lt;/u&gt;*.
 
 
 ```r
 vgsales &lt;- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/data/vgsales.csv")
- 
-skim(vgsales)
+```
+---
+Next, to get an idea of what the dataset entails, we will use *&lt;u&gt;skim&lt;/u&gt;* and *&lt;u&gt;glimpse&lt;/u&gt;*.
+
+```r
+skim(vgsales) 
 ```
 
 
@@ -95,6 +116,7 @@ Table: Data summary
 |JP_Sales      |         0|             1|    0.08|    0.31| 0.00|    0.00|    0.00|     0.04|    10.22|▇▁▁▁▁ |
 |Other_Sales   |         0|             1|    0.05|    0.19| 0.00|    0.00|    0.01|     0.04|    10.57|▇▁▁▁▁ |
 |Global_Sales  |         0|             1|    0.54|    1.56| 0.01|    0.06|    0.17|     0.47|    82.74|▇▁▁▁▁ |
+---
 
 ```r
 glimpse(vgsales)
@@ -116,6 +138,7 @@ glimpse(vgsales)
 ## $ Global_Sales &lt;dbl&gt; 82.74, 40.24, 35.82, 33.00, 31.37, 30.26, 30.01, 29.02, 2…
 ```
 
+---
 **&lt;u&gt;Data Analysis Plan&lt;/u&gt;**
 
 * &lt;u&gt;Outcome (y)&lt;/u&gt;: Global Sales
@@ -131,7 +154,6 @@ glimpse(vgsales)
   + 3. Find the most popular genre in the world. 
 
 ***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
-
 
 
 ```r
