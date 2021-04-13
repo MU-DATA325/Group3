@@ -63,10 +63,11 @@ First we load the packages *&lt;u&gt;tidyverse&lt;/u&gt;* and *&lt;u&gt;skimr&lt
 
 ```r
 library(tidyverse)
+library(formattable)
 library(skimr)
 ```
 --
-Using these packages we can save the dataset using *&lt;u&gt;read_csv&lt;/u&gt;*.
+Using these packages we can save the dataset using *&lt;u&gt;read_csv&lt;/u&gt;* and later edit our tabels.
 
 
 ```r
@@ -119,7 +120,7 @@ Table: Data summary
 ---
 
 ```r
-glimpse(vgsales)
+glimpse(vgsales) 
 ```
 
 ```
@@ -155,24 +156,66 @@ glimpse(vgsales)
 
 ***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
 ---
+##Genre and Global Sales Table
 
-```
-## # A tibble: 12 x 2
-##    Genre        Global_Sales
-##    &lt;chr&gt;               &lt;dbl&gt;
-##  1 Action              1751.
-##  2 Sports              1331.
-##  3 Shooter             1037.
-##  4 Role-Playing         927.
-##  5 Platform             831.
-##  6 Misc                 810.
-##  7 Racing               732.
-##  8 Fighting             449.
-##  9 Simulation           392.
-## 10 Puzzle               245.
-## 11 Adventure            239.
-## 12 Strategy             175.
-```
+&lt;table class="table table-condensed"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Genre &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Global_Sales &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Action      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;1751.18&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Sports      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;1330.93&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Shooter     &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;1037.37&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Role-Playing&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;927.37&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Platform    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;831.37&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Misc        &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;809.96&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Racing      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;732.04&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Fighting    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;448.91&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Simulation  &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;392.20&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Puzzle      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;244.95&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Adventure   &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;239.04&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Strategy    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;175.12&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -217,8 +260,6 @@ glimpse(vgsales)
 ```
 
 ---
-
-## Plots ##
 ![](presentation_files/figure-html/Plot1-1.png)&lt;!-- --&gt;
 
 ---
