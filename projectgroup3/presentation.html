@@ -126,25 +126,83 @@ Table: Data summary
 |Global_Sales  |         0|             1|    0.54|    1.56| 0.01|    0.06|    0.17|     0.47|    82.74|▇▁▁▁▁ |
 ---
 
+
+
 ```r
-glimpse(vgsales)
+vgslaes_1_glimpse
 ```
 
-```
-## Rows: 16,598
-## Columns: 11
-## $ Rank         &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…
-## $ Name         &lt;chr&gt; "Wii Sports", "Super Mario Bros.", "Mario Kart Wii", "Wi…
-## $ Platform     &lt;chr&gt; "Wii", "NES", "Wii", "Wii", "GB", "GB", "DS", "Wii", "Wi…
-## $ Year         &lt;chr&gt; "2006", "1985", "2008", "2009", "1996", "1989", "2006", …
-## $ Genre        &lt;chr&gt; "Sports", "Platform", "Racing", "Sports", "Role-Playing"…
-## $ Publisher    &lt;chr&gt; "Nintendo", "Nintendo", "Nintendo", "Nintendo", "Nintend…
-## $ NA_Sales     &lt;dbl&gt; 41.49, 29.08, 15.85, 15.75, 11.27, 23.20, 11.38, 14.03, …
-## $ EU_Sales     &lt;dbl&gt; 29.02, 3.58, 12.88, 11.01, 8.89, 2.26, 9.23, 9.20, 7.06,…
-## $ JP_Sales     &lt;dbl&gt; 3.77, 6.81, 3.79, 3.28, 10.22, 4.22, 6.50, 2.93, 4.70, 0…
-## $ Other_Sales  &lt;dbl&gt; 8.46, 0.77, 3.31, 2.96, 1.00, 0.58, 2.90, 2.85, 2.26, 0.…
-## $ Global_Sales &lt;dbl&gt; 82.74, 40.24, 35.82, 33.00, 31.37, 30.26, 30.01, 29.02, …
-```
+
+&lt;table class="table table-condensed"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Platform &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Genre &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NA_Sales &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; EU_Sales &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; JP_Sales &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Global_Sales &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Wii Sports &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Wii &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Sports &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.02 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 82.74 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Super Mario Bros. &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NES &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Platform &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.08 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.58 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.81 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40.24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Mario Kart Wii &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Wii &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Racing &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35.82 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Wii Sports Resort &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Wii &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Sports &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.75 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Pokemon Red/Pokemon Blue &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; GB &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Role-Playing &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.89 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31.37 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; Tetris &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; GB &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Puzzle &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.26 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
 
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")

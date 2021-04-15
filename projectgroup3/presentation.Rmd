@@ -76,9 +76,20 @@ Next, to get an idea of what the dataset entails, we will use *<u>skim</u>* and 
 skim(vgsales)
 ```
 ---
-```{r glimpse}
-glimpse(vgsales)
+```{r vgslales1, include=FALSE}
+vgsales_1 <- vgsales %>%
+  select(Name, Platform, Genre, NA_Sales, EU_Sales, JP_Sales, Global_Sales) %>%
+  glimpse()
+vgslaes_1_glimpse <- vgsales_1 %>%
+  head () %>%
+  formattable()
+
 ```
+
+```{r glimpse}
+vgslaes_1_glimpse
+```
+
 
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
