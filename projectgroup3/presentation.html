@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 ## DATA 325 | Dr. Andrew Hall
 ### Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna
 ### Marymount University
-### 4/15/21
+### 4/16/21
 
 ---
 
@@ -30,7 +30,7 @@ For our Data final project, we chose the “Video Game Sales” dataset from **K
 
 --
 
-“Video Game Sales” was published by Gregory Smith on Kaggle in 2017PerPe. The dataset has a list of video games with sales of over 100,000 copies worldwide between the years 2007-2011. The data was collected from the website VGChartz, which is a business intelligence research firm that was founded in 2005 by Brett Walton. VGChartz offers consumers access to their 55,000+ large database on video games which includes sales data, reviews, news, and a forum. 
+“Video Game Sales” was published by Gregory Smith on Kaggle in 2017. The dataset has a list of video games with sales of over 100,000 copies worldwide between the years 2007-2011. The data was collected from the website VGChartz, which is a business intelligence research firm that was founded in 2005 by Brett Walton. VGChartz offers consumers access to their 55,000+ large database on video games which includes sales data, reviews, news, and a forum. 
 
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
@@ -74,7 +74,7 @@ library(formattable)
 library(skimr)
 ```
 --
-Using these packages we can save the dataset using *&lt;u&gt;read_csv&lt;/u&gt;* and later edit our tabels.
+Using these packages we can save the dataset using *&lt;u&gt;read_csv&lt;/u&gt;* and later edit our tables.
 
 
 ```r
@@ -129,7 +129,7 @@ Table: Data summary
 
 
 ```r
-vgslaes_1_glimpse
+vgsales_1_glimpse
 ```
 
 
@@ -290,46 +290,189 @@ class: center
 &lt;/tbody&gt;
 &lt;/table&gt;
 ---
-
-
-```
-## # A tibble: 12 x 2
-##    Genre        EU_Sales
-##    &lt;chr&gt;           &lt;dbl&gt;
-##  1 Action          525  
-##  2 Sports          377. 
-##  3 Shooter         313. 
-##  4 Racing          238. 
-##  5 Misc            216. 
-##  6 Platform        202. 
-##  7 Role-Playing    188. 
-##  8 Simulation      113. 
-##  9 Fighting        101. 
-## 10 Adventure        64.1
-## 11 Puzzle           50.8
-## 12 Strategy         45.3
-```
-
+column-count: 3;
+column-width: auto;
+#Regional Breakdown
 ---
 
+&lt;table class="table table-condensed"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Genre &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; EU_Sales &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Action      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;525.00&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Sports      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;376.85&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Shooter     &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;313.27&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Racing      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;238.39&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Misc        &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;215.98&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Platform    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;201.63&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Role-Playing&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;188.06&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Simulation  &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;113.38&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Fighting    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;101.32&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Adventure   &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;64.13&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Puzzle      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;50.78&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Strategy    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;45.34&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
 
-```
-## # A tibble: 12 x 2
-##    Genre        NA_Sales
-##    &lt;chr&gt;           &lt;dbl&gt;
-##  1 Action          878. 
-##  2 Sports          683. 
-##  3 Shooter         583. 
-##  4 Platform        447. 
-##  5 Misc            410. 
-##  6 Racing          359. 
-##  7 Role-Playing    327. 
-##  8 Fighting        224. 
-##  9 Simulation      183. 
-## 10 Puzzle          124. 
-## 11 Adventure       106. 
-## 12 Strategy         68.7
-```
+&lt;table class="table table-condensed"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Genre &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; NA_Sales &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Action      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;877.83&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Sports      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;683.35&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Shooter     &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;582.60&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Platform    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;447.05&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Misc        &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;410.24&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Racing      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;359.42&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Role-Playing&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;327.28&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Fighting    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;223.59&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Simulation  &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;183.31&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Puzzle      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;123.78&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Adventure   &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;105.80&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Strategy    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;68.70&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+
+&lt;table class="table table-condensed"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Genre &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; JP_Sales &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Role-Playing&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;352.31&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Action      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;159.95&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Sports      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;135.37&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Platform    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;130.77&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Misc        &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;107.76&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Fighting    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;87.35&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Simulation  &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;63.70&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Puzzle      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;57.31&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Racing      &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;56.69&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Adventure   &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;52.07&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Strategy    &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;49.46&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="color: orange; font-weight: bold"&gt;Shooter     &lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6"&gt;38.28&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
@@ -337,12 +480,19 @@ class: center, top
 &lt;img src="presentation_files/figure-html/Plot1-1.png" width="85%" height="75%" /&gt;
 
 ---
-
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
+class: center, top
 ![](presentation_files/figure-html/Plot2-1.png)&lt;!-- --&gt;
 
 ---
-
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
+class: center, top
 ![](presentation_files/figure-html/Plot3-1.png)&lt;!-- --&gt;
+
+---
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
+class: center, top
+![](presentation_files/figure-html/Plot4-1.png)&lt;!-- --&gt;
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&amp;crop=1")
 background-position: top right
@@ -350,19 +500,23 @@ background-size: 150px 155px
 #Summary
 --
 
-* Most popular video-game genre in Europe is 
+* The most popular video-game genre (globally) is *Action.*
 
 --
 
-* Most popular video-game genre in Japan is
+* Other trending genres, by region:
 
 --
 
-* Most popular video-game genre in the USA is
++ In Japan, Role-Playing Games (RPGs) are most popular by a large margin.
 
 --
 
-* Most popular video-game genre in the world is 
++ In North America, Action games are most popular; Shooters and Sports games also have strong sales.
+
+--
+
++ Europe's trends are similar to those of North America.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
