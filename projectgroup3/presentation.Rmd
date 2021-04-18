@@ -2,7 +2,7 @@
 title: "Project Group 3"
 subtitle: "DATA 325 | Dr. Andrew Hall"
 author: "Krist Adofo | Taylor Memon | Roey Stern | Nicholas Metzger | Nicholas McKenna"
-date: "4/16/21"
+date: "4/22/21"
 institute: "Marymount University"
 output:
   xaringan::moon_reader:
@@ -92,7 +92,9 @@ vgsales_1 <- vgsales %>%
   glimpse()
 vgsales_1_glimpse <- vgsales_1 %>%
   head () %>%
-  formattable()
+  formattable(
+     align = c("c","c")
+  )
 
 ```
 
@@ -107,29 +109,91 @@ background-position: top right
 background-size: 150px 155px
 **<u>Data Analysis Plan</u>**
 
+--
+
 * <u>Outcome (y)</u>: Global Sales
+
+--
+
 * <u>Predictor (x)</u>: Genre
-* <u>Preliminary Exploratory Data Analysis</u>: 
+
+--
+
+* <u>Preliminary Exploratory Data Analysis</u>:  
   + Count all genres
   + Find the most produced genre.
   + Count sales worldwide between the years of 2007-2011
+
+--
+
 * <u>Hypothesis</u>: The most produced genre also had the highest amount of sales worldwide. 
+
+--
+
 * <u>Methods</u>: 
   + 1. Find total sales for each genre 
   + 2. Compare total sales of each genre. 
   + 3. Find the most popular genre in the world. 
 
+--
+
 ***In order to not reject our hypothesis, our results should indicate that the most produced genre also has the highest amount of sales.***
 ---
-column-count: 3;
-column-width: auto;
-class: center, top
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
-#Regional Breakdown
----
+background-position: top right
+background-size: 150px 155px
 class: center
-#Europe Sales and Production
-.pull-left[
+#<u>Production Table</u>
+```{r prodction-table, echo=FALSE}
+production_table <- vgsales %>%
+  group_by(Genre) %>%
+  summarize(Count = n()) %>%
+  arrange(desc(Count)) %>%
+   formattable(
+    align = c("c","c"),
+    list(
+      'Genre' = formatter("span", style = ~ style(color = "orange", font.weight = "bold")),
+      'Count' = color_tile("light blue", "light blue") 
+  ))
+
+production_table
+```
+---
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
+class: center, middle
+```{r production-plot, echo=FALSE,out.width="85%", out.height="75%"}
+production_table %>%
+  ggplot(aes(y=Genre, x= Count, color= Genre, fill=Genre)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label= Count), hjust = 1.0, colour= "black", size=5) +
+  theme_minimal() +
+  labs(
+    title = "Global Video Game Production by Genre (Global)",
+    subtitle = "For the years 2007-2011",
+    x = "Nubmber of Games Produced",
+    y = "Genres",
+    caption = "Action was the most produced video-game genre worldwide between 2007-2011."
+  ) +
+  theme(
+   text=element_text(size=15),
+   plot.caption = element_text(hjust = 0.4, face = "bold", colour = "orange")
+    )
+
+```
+
+---
+class: center, middle
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
+background-position: top right
+background-size: 150px 155px
+#Regional Breakdown
+##According to the production data, we expect <u>Action</u> to be the highest selling genre in each region.
+---
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
+background-position: top right
+background-size: 150px 155px
+class: center, top
+#<u>Europe Sales</u> 
 ```{r EUsales, echo=FALSE}
 options(width = 60)
 genre_EU_Sales <- vgsales %>% 
@@ -145,7 +209,6 @@ genre_EU_Sales <- vgsales %>%
 genre_EU_Sales
 
 ```
-]
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 class: center, top
@@ -153,7 +216,7 @@ class: center, top
 genre_EU_Sales %>%
   ggplot(aes(y=Genre, x=EU_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label=round(EU_Sales)), hjust = 1.0, colour= "black") +
+  geom_text(aes(label=round(EU_Sales)), hjust = 1.0, colour= "black", size=5) +
    theme_minimal() +
     labs(
     title = "Video Game Sales by Genre (EU)",
@@ -161,9 +224,18 @@ genre_EU_Sales %>%
     x = "Sales in Millions",
     y = "Genres",
     caption = "Action was the most popular video-game genre across Europe between 2007-2011."
-  )
+  ) +
+  theme(
+   text=element_text(size=15),
+   plot.caption = element_text(hjust = 0.4, face = "bold", colour = "orange")
+    )
 ```
 ---
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
+background-position: top right
+background-size: 150px 155px
+class: center, top
+#<u>North America Sales</u>
 ```{r nasales, echo=FALSE}
 NAsalesgenre <- vgsales %>% 
   group_by(Genre) %>% 
@@ -180,11 +252,11 @@ NAsalesgenre
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 class: center, top
-```{r Plot3, out.width="85%", out.height="75%", echo=FALSE}
+```{r PlotNA, out.width="85%", out.height="115%", echo=FALSE}
 NAsalesgenre %>%
   ggplot(aes(y=Genre, x=NA_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label=round(NA_Sales)), hjust = 1.0, colour= "black") +
+  geom_text(aes(label=round(NA_Sales)), hjust = 1.0, colour= "black", size=5) +
    theme_minimal() +
     labs(
     title = "Video Game Sales by Genre (NA)",
@@ -192,9 +264,18 @@ NAsalesgenre %>%
     x = "Sales in Millions",
     y = "Genres",
     caption = "Action was the most popular video-game genre across North America between 2007-2011."
-  )
+  ) +
+  theme(
+   text=element_text(size=15),
+   plot.caption = element_text(hjust = 0.4, face = "bold",colour = "orange", size=11.5)
+    )
 ```
 ---
+background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
+background-position: top right
+background-size: 150px 155px
+class: center, top
+#<u>Japan Sales</u>
 ```{r jpsales, echo=FALSE}
 JPsalesgenre <- vgsales %>% 
   group_by(Genre) %>% 
@@ -205,17 +286,17 @@ JPsalesgenre <- vgsales %>%
     list(
       'Genre' = formatter("span", style = ~ style(color = "orange", font.weight = "bold")),
       'JP_Sales' = color_tile("light blue", "light blue") 
-  ))
+  )) 
 JPsalesgenre
 ```
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 class: center, top
-```{r Plot4, out.width="85%", out.height="75%", echo=FALSE}
+```{r Plot-JP, out.width="85%", out.height="75%", echo=FALSE}
 JPsalesgenre %>%
   ggplot(aes(y=Genre, x=JP_Sales, colour= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label=round(JP_Sales)), hjust = 1.0, colour= "black") +
+  geom_text(aes(label=round(JP_Sales)), hjust = 1.0, colour= "black", size=5) +
    theme_minimal() +
     labs(
     title = "Video Game Sales by Genre (JP)",
@@ -223,19 +304,20 @@ JPsalesgenre %>%
     x = "Sales in Millions",
     y = "Genres",
     caption = "Role-Playing was the most popular video-game genre across Japan between 2007-2011."
-  )
+  ) +
+  theme(
+   text=element_text(size=15),
+   plot.caption = element_text(hjust = 0.4, face = "bold",colour = "orange", size=11.5)
+    )
 ```
----
-
-
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 background-position: top right
 background-size: 150px 155px
 class: center
-#Genre and Global Sales Table
+#<u>Global Sales Table</u>
 
-```{r GLOBALsales,echo=FALSE}
+```{r GlobalSales,echo=FALSE}
 genre_globalsales <- vgsales %>% 
   group_by(Genre) %>% 
   summarise(Global_Sales= sum(Global_Sales)) %>%
@@ -252,11 +334,11 @@ genre_globalsales
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 class: center, top
-```{r Plot1, out.width="85%", out.height="75%", echo=FALSE}
+```{r Plot-Global, out.width="85%", out.height="75%", echo=FALSE}
 genre_globalsales %>%
   ggplot(aes(y=Genre, x=Global_Sales, color= Genre, fill=Genre)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label=round(Global_Sales)), hjust = 1.0, colour= "black") +
+  geom_text(aes(label=round(Global_Sales)), hjust = 1.0, colour= "black", size=5) +
   theme_minimal() +
   labs(
     title = "Global Video Game Sales by Genre (Global)",
@@ -264,16 +346,28 @@ genre_globalsales %>%
     x = "Sales in Millions",
     y = "Genres",
     caption = "Action was the most popular video-game genre worldwide between 2007-2011."
-  )
+  ) +
+  theme(
+   text=element_text(size=15),
+   plot.caption = element_text(hjust = 0.4, face = "bold", colour = "orange")
+    )
 ```
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 background-position: top right
 background-size: 150px 155px
-#Summary
+#<u>Summary</u>
 --
 
-* The most popular video-game genre (globally) is *Action.*
+* The most popular video-game genre (globally) is <u>***Action.***</u>
+
+--
+
+* And the most produced video-game genre (globally) is also <u>***Action.***</u>
+
+--
+
+* Based on our analysis, we do not reject our hypothesis - **"The most produced Genre also had the highest amount of sales worldwide."**
 
 --
 
@@ -281,12 +375,17 @@ background-size: 150px 155px
 
 --
 
-+ In Japan, Role-Playing Games (RPGs) are most popular by a large margin.
++ In Japan, <u>*Role-Playing Games*</u> (RPGs) are most popular by a large margin.
 
 --
 
-+ In North America, Action games are most popular; Shooters and Sports games also have strong sales.
++ In North America, <u>*Action*</u> games are most popular; <u>*Shooters*</u> and <u>*Sports*</u> games also have strong sales.
 
 --
 
-+ Europe's trends are similar to those of North America.
++ Europe's trends <u>*are similar*</u> to those of North America.
+---
+class:center, middle
+
+```{r gif, echo=FALSE, eval=TRUE, out.height=600, out.width=800}
+knitr::include_graphics('https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif')
