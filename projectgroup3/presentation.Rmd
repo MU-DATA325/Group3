@@ -12,15 +12,6 @@ output:
     highlightLines: true
     countIncrementalSlides: false
     
-    #Notes: Formatting is going way off of slide 12 (see line 74.)
-    #slide 16: Columns are not separated properly (separate slides until fixed).
-    #Added a CSS file, formatting needs to be merged with this doc before it 
-    #can be added to the header (doing this early will break all formatting).
-    #Background colors do not line up with formatting, should be a simple fix
-    #Slide 14 needs better line spacing, this will be cleaned up in CSS tweaks
-    #Weird truncating on slide 16, solution unknown
-    #New background in progress for slide 18
-    #Reworked conclusion
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")
 background-position: top right
@@ -67,7 +58,7 @@ background-size: 150px 155px
 #<u>Data</u> 
 --
 
-First we load the packages *<u>tidyverse</u>* and *<u>skimr</u>*. 
+First we load the packages *<u>tidyverse</u>*, *<u>skimr</u>*, and *<u>formattable</u>*. 
 
 ```{r load-pkg, message = FALSE}
 library(tidyverse)
@@ -131,9 +122,9 @@ background-size: 150px 155px
 --
 
 * <u>Methods</u>: 
-  + 1. Find total sales for each genre 
-  + 2. Compare total sales of each genre. 
-  + 3. Find the most popular genre in the world. 
+  + A. Find total sales for each genre 
+  + B. Compare total sales of each genre. 
+  + C. Find the most popular genre in the world. 
 
 --
 
