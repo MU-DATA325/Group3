@@ -148,6 +148,7 @@ production_table <- vgsales %>%
   ))
 
 production_table
+write.table(production_table,file="./production-table")
 ```
 ---
 background-image: url("https://techcrunch.com/wp-content/uploads/2020/06/igor-karimov-M1nZU61xTK4-unsplash.jpg?w=1390&crop=1")

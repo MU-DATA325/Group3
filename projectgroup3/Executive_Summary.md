@@ -16,5 +16,22 @@ What is the most popular video game genre in the world?
 
 Our methodology was to use the different packages offered in Rstudio and create tibbles from the data set. We needed to count the genres, find the most produced genre in the given area and follow by counting the worldwide sales between the given years. These tibbles could then be used to create plots to show the different genres of games based on popularity. 
 
+| Genre | Count |
+|:---:|:---:|
+| Action | 3316 |
+| Sports | 2346 |
+| Misc   | 1739 |
+| Role-Playing | 1488 |
+| Shooter | 1310 |
+| Adventure | 1286 |
+| Racing | 1249 |
+| Platform | 886 |
+| Simulation | 867 |
+| Fighting | 848 |
+| Strategy | 681 |
+| Puzzle | 582 |
+
+![Table chart of game production, organized by Genre](./presentation_files/figure-html/production-plot-1.png "Production data by genre.") 
+<br />
 Our findings were that global sales most popular video game genre was action. European sales and North American sales mirrored that in having the most popular genre being action. 
 
