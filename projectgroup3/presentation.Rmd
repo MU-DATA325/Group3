@@ -72,11 +72,14 @@ Using these packages we can save the dataset using *<u>read_csv</u>* and later e
 vgsales <- read_csv ("https://raw.githubusercontent.com/MU-DATA325/Group3/main/data/vgsales.csv")
 ```
 ---
+#Skim function
 Next, to get an idea of what the dataset entails, we will use *<u>skim</u>* and *<u>glimpse</u>*.
 ```{r skim, echo=TRUE, message=FALSE}
 skim(vgsales)
 ```
+
 ---
+#Glimpse function
 ```{r vgsales1, include=FALSE}
 vgsales_1 <- vgsales %>%
   select(Name, Platform, Genre, NA_Sales, EU_Sales, JP_Sales, Global_Sales) %>%
@@ -379,5 +382,5 @@ background-size: 150px 155px
 ---
 class:center, middle
 
-```{r gif, echo=FALSE, eval=TRUE, out.height=600, out.width=800}
+```{r gif, echo=FALSE, eval=FALSE, out.height=600, out.width=800}
 knitr::include_graphics('https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif')

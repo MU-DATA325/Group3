@@ -7,14 +7,14 @@ The fields are:
 Ranks, Name, Platform, Year, Genre, Publisher, NA Sales, EU Sales, JP Sales, Other sales and Global Sales. 
 
 
-We looked at the data from 2007-2011
+We looked at data from 2007-2011.  It includes data from games produced before 2007, but specifically focuses on sales numbers and production as of the years recorded.
 
 
 Our research question was:
 What is the most popular video game genre in the world? 
 
 
-Our methodology was to use the different packages offered in Rstudio and create tibbles from the data set. We needed to count the genres, find the most produced genre in the given area and follow by counting the worldwide sales between the given years. These tibbles could then be used to create plots to show the different genres of games based on popularity. 
+Our methodology was to use the different packages offered in Rstudio and create tibbles from the data set. We needed to count the genres, find the most produced genre in the given area and follow by counting the worldwide sales between the given years. These tibbles could then be used to create plots to show the different genres of games based on popularity.  As a general hypothesis, we focused on the number of games produced in general according to the data, assuming that there would be a correlation between produced quantity and popularity.
 
 | Genre | Count |
 |:---:|:---:|
@@ -31,7 +31,7 @@ Our methodology was to use the different packages offered in Rstudio and create 
 | Strategy | 681 |
 | Puzzle | 582 |
 
-![Table chart of game production, organized by Genre](./presentation_files/figure-html/production-plot-1.png "Production data by genre.") 
+![Plot of game sales, organized by Genre](./presentation_files/figure-html/production-plot-1.png "Production data by genre.") 
 <br />
 Our findings were that global sales most popular video game genre was action. European sales and North American sales mirrored that in having the most popular genre being action. 
 
