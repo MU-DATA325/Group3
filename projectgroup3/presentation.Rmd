@@ -382,5 +382,5 @@ background-size: 150px 155px
 ---
 class:center, middle
 
-```{r gif, echo=FALSE, eval=FALSE, out.height=600, out.width=800}
+```{r gif, echo=FALSE, out.height=600, out.width=800}
 knitr::include_graphics('https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif')
